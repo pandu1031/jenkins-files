@@ -14,7 +14,7 @@ pipeline{
             
             }
         }
-        stage("uploading artifacts"){
+        stage("uploading artifacts to s3 bucket"){
             steps{
                 println "im uploading the artifacts to s3 bucket"
             }
