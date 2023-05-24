@@ -3,12 +3,11 @@
 pipeline {
     agent any
     stages[
-        stage(" pandu file"){
+        stage(" Mamu file"){
             steps{
-                println "this is simple pipeline code"
+                println "Mamu has created this simple pipeline code"
             }
         }
 
     ]
-
-}
+} 
