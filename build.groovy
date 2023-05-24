@@ -1,0 +1,23 @@
+// Declarative pipeline
+
+pipeline{
+    agent any
+    stages{
+        stage("checkout code"){
+            steps{
+                println "Here im clonig the code"
+            }
+        }
+        stage("Build"){
+            steps{
+
+                println "Here im building the code --mvn clean package "
+            }
+        }
+        stage("Uploadig artifacts to s3 bucket"){
+            steps{
+                println "Here im adding the artifacts to s3 bucket"
+            }
+        }
+    }
+}
