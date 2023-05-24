@@ -2,26 +2,26 @@ pipeline{
     agent any
 
     stages{
-        stage("cloning the code"){
+        stage("clone code"){
             steps{
-                println "I'm cloning the code frim git hub repo"
+                println "Here I'm cloning the code frim git hub repo"
 
             }
         }
         stage("build "){
             steps{
-                println "im executing the code --mvn clean package"
+                println "Here im executing the code --mvn clean package"
             
             }
         }
-        stage("uploading artifacts to s3 bucket"){
+        stage("upload artifacts to s3 bucket"){
             steps{
-                println "im uploading the artifacts to s3 bucket"
+                println "Hereim uploading the artifacts to s3 bucket"
             }
         }
-        stage("deploy"){
+        stage("deployment"){
             steps{
-                println "im deploying the code to tomcat location"
+                println "Here im deploying the code to tomcat location"
             }
         }
 
