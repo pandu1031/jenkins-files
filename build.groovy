@@ -5,7 +5,7 @@ pipeline{
     stages{
         stage("checkout code"){
             steps{
-                println "Here im clonig the code"
+                println "Here im clonig the code from github"
             }
         }
         stage("Build"){
