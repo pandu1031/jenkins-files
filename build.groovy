@@ -14,9 +14,9 @@ pipeline{
                 println "Here im building the code --mvn clean package "
             }
         }
-        stage("Uploadig artifacts to s3 bucket"){
+        stage("Uploadig artifacts to S3 bucket"){
             steps{
-                println "Here im adding the artifacts to s3 bucket"
+                println "Here im adding the artifacts to S3 bucket"
             }
         }
     }
