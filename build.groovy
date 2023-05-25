@@ -21,6 +21,8 @@ pipeline{
         stage("Uploadig artifacts to S3 bucket"){
             steps{
                 println "Here im adding the artifacts to S3 bucket"
+                sh "echo $BUILD_NUMBER"
+                sh "aws s3 cp target/{$BUILD_NUMBER} s3://mamuu/master/{$BUILD_NUMBER}/"
                 
             }
         }
