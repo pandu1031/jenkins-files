@@ -5,13 +5,13 @@ pipeline{
     stages{
         stage("checkout code"){
             steps{
-                println "Here im clonig the code from github"
+                println "Here im clonnig the code from github"
             }
         }
         stage("Build"){
             steps{
 
-                println "Here im building the code --mvn clean package "
+                println "Here im building the code  "
                 sh "mvn clean package"
                 sh " ls -l target/"
             }
