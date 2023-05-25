@@ -12,6 +12,7 @@ pipeline{
             steps{
 
                 println "Here im building the code --mvn clean package "
+                sh "mvn clean package"
             }
         }
         stage("Uploadig artifacts to S3 bucket"){
