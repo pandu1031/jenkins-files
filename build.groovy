@@ -20,7 +20,7 @@ pipeline{
 
                 println "Here im building the code  "
                 sh "mvn clean package"
-                //sh " ls -l target/"
+                sh " ls -l target/"
             }
         }
         stage("Uploadig artifacts to s3 bucket"){
