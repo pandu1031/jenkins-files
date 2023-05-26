@@ -2,9 +2,9 @@
 
 pipeline{
     agent any
-    environment {
-        BRANCH = "${BRANCH_NAME}"
-    }
+   // environment {
+        //BRANCH = "${BRANCH_NAME}"
+   // }
     stages{
         stage("checkout code"){
             steps{
