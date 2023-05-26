@@ -2,12 +2,17 @@
 
 pipeline{
     agent any
+    environment {
+        BRANCH = "${BRANCH_NAME}"
+    }
     stages{
         stage("checkout code"){
             steps{
                 println "Here im clonnig the code from github"
-                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[ url: 'https://github.com/pandu1031/boxfuse-sample-java-war-hello.git']]])
-                sh "ls -lart ./*"
+                 // checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[ url: 'https://github.com/pandu1031/boxfuse-sample-java-war-hello.git']]])
+                //sh "ls -lart ./*"
+                git branch : "${BRANCH_NAME}"
+                url:'https://github.com/pandu1031/boxfuse-sample-java-war-hello.git'
             }
         }
         stage("Build"){
@@ -15,7 +20,7 @@ pipeline{
 
                 println "Here im building the code  "
                 sh "mvn clean package"
-                sh " ls -l target/"
+                //sh " ls -l target/"
             }
         }
         stage("Uploadig artifacts to s3 bucket"){
