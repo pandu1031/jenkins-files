@@ -11,7 +11,7 @@ pipeline{
                 println "Here im clonnig the code from github"
                  // checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[ url: 'https://github.com/pandu1031/boxfuse-sample-java-war-hello.git']]])
                 //sh "ls -lart ./*"
-                git branch : "${BRANCH_NAME}"
+                git branch: "${BRANCH_NAME}",
                 url:'https://github.com/pandu1031/boxfuse-sample-java-war-hello.git'
             }
         }
