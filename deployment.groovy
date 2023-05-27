@@ -4,6 +4,7 @@ pipeline{
     parameters {
     string( name: 'BRANCH_NAME', defaultValue: 'master', description: 'pass here deployment branch name')
     string( name: 'BUILD_NUM', defaultValue: '', description: 'here im passing deployment build number')
+    string( name: 'SERVER_IP', defaultValue: '', description: 'here im passing server ip')
   }
   stages{
     stage("Copying artifacts"){
@@ -20,6 +21,7 @@ pipeline{
     stage("Deploying"){
         steps{
             println "here im deploying the artifacts"
+            sh "ssh -i /tmp/mamu1031.pem ec2-user@${SERVER_IP} "systemctl status tomcat""
         }
     }
 
