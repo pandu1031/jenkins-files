@@ -21,7 +21,7 @@ pipeline{
     stage("Deploying"){
         steps{
             println "here im deploying the artifacts"
-            sh "ssh -i /tmp/mamu1031.pem ec2-user@${SERVER_IP} "systemctl status tomcat""
+            sh "ssh -i /tmp/mamu1031.pem ec2-user@${SERVER_IP} \"systemctl status tomcat\""
         }
     }
 
