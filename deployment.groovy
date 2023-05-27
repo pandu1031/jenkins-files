@@ -9,6 +9,12 @@ pipeline{
     stage("Copying artifacts"){
         steps{
         println " here im copying artfacts from s3 bucket"
+        sh """ 
+               aws s3 ls 
+               aws s3 ls s3://mamuu
+               aws s3 ls s3://mamuu/${BRANCH_NAME}/${BUILD_NUM}/
+               aws s3 cp s3://mamuu/${BRANCH_NAME}/${BUILD_NUM}/hello-${BUILD_NUM}.war .
+        """
     } 
     }
     stage("Deploying"){
