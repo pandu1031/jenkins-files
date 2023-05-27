@@ -15,12 +15,13 @@ pipeline{
                aws s3 ls s3://mamuu
                aws s3 ls s3://mamuu/${BRANCH_NAME}/${BUILD_NUM}/
                aws s3 cp s3://mamuu/${BRANCH_NAME}/${BUILD_NUM}/hello-${BUILD_NUM}.war .
+               whoami
         """
-    } 
+    }
     }
     stage("Deploying"){
         steps{
-            println "here im deploying the artifacts"
+            println "here im deploying the artifacts from jenkins server to Tomcat"
             sh "ssh -i /tmp/mamu1031.pem ec2-user@${SERVER_IP} \"systemctl status tomcat\""
         }
     }
