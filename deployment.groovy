@@ -23,6 +23,7 @@ pipeline{
         steps{
             println "here im deploying the artifacts from jenkins server to Tomcat"
             sh "ssh -i /tmp/mamu1031.pem ec2-user@${SERVER_IP} \"systemctl status tomcat\""
+            sh "scp -i /tmp/mamu1031.pem hello-${BUILD_NUM}.war ec2-user@${SERVER_IP}:/var/lib/tomcat/webapps/"
         }
     }
 
